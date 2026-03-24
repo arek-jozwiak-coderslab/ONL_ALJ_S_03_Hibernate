@@ -1,6 +1,7 @@
 package pl.coderslab.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "categories")
