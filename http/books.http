@@ -1,0 +1,18 @@
+### GET request to example server
+GET http://localhost:8080/api/books/
+###
+### GET request to example server
+GET http://localhost:8080/api/books/2
+###
+POST http://localhost:8080/api/books/
+Content-Type: application/json
+
+{
+    "title": "The Hobbit",
+    "description": "A book about a hobbit"
+}
+
+###
+DELETE http://localhost:8080/api/books/5
+
+###
