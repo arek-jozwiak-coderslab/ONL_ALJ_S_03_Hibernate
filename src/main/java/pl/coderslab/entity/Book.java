@@ -1,6 +1,7 @@
 package pl.coderslab.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name="books")
@@ -9,10 +10,19 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(min = 5)
+    @NotBlank
     private String title;
+    @Min(1)
+    @Max(10)
     private int rating;
+    @Size(max = 600)
     private String description;
 
+    @Min(1)
+    private int pages;
+
+    @NotNull
     @ManyToOne
     private Publisher publisher;
 
@@ -21,6 +31,14 @@ public class Book {
 
     public Category getCategory() {
         return category;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
     }
 
     public void setCategory(Category category) {

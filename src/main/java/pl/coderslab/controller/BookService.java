@@ -17,7 +17,9 @@ public class BookService {
     }
 
     public List<Book> findAll() {
-        return bookRepository.findAll();
+        List<Book> all = bookRepository.findAll();
+        all.forEach(book -> book.setCategory(null));
+        return all;
     }
 
     public Optional<Book> findById(Long id) {
